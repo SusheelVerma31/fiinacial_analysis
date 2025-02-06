@@ -2,3 +2,4 @@ streamlit
 openpyxl
 xgboost
 duckdb
+plotly
