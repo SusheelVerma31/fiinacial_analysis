@@ -18,13 +18,17 @@ st.set_page_config(page_title="Sales Dashboard", page_icon=":bar_chart:", layout
 st.title("Sales Streamlit Dashboard")
 st.markdown("_Prototype v0.4.1_")
 
-with st.sidebar:
-    st.header("Configuration")
-    uploaded_file = st.file_uploader("Choose a file")
 
-if uploaded_file is None:
-    st.info(" Upload a file through config", icon="ℹ️")
-    st.stop()
+# with st.sidebar:
+#     st.header("Configuration")
+#     uploaded_file = st.file_uploader("Choose a file")
+
+# if uploaded_file is None:
+#     st.info(" Upload a file through config", icon="ℹ️")
+#     st.stop()
+
+    
+
 
 #######################################
 # DATA LOADING
@@ -33,10 +37,10 @@ if uploaded_file is None:
 
 @st.cache_data
 def load_data(path: str):
-    df = pd.read_excel(path)
+    df = pd.read_excel('Financial_Data.xlsx')
     return df
 
-
+uploaded_file = pd.read_excel('Financial_Data.xlsx')
 df = load_data(uploaded_file)
 all_months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
 
